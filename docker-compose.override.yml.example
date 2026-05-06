@@ -12,6 +12,7 @@ services:
       # start_period: 90s
     # environment:
       # SKIP_SUPERUSER: "false"
+      # SUPERUSER_API_KEY: ""
       # SUPERUSER_API_TOKEN: ""
       # SUPERUSER_EMAIL: ""
       # SUPERUSER_NAME: ""

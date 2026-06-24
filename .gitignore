@@ -1,0 +1,23 @@
+# -----------------------------------------------------
+# Iron Logic AI-Infra Toolkit - Global .gitignore
+# -----------------------------------------------------
+
+# 1. Python Caches (The operational garbage)
+__pycache__/
+*.pyc
+*.pyo
+
+# 2. Local Environment & Secrets (Never commit credentials!)
+.env
+venv/
+env/
+
+# 3. System & Editor Junk
+.vscode/
+.DS_Store
+Thumbs.db
+
+# 4. Massive Data & Logs (Keep the vault lightweight)
+*.log
+*.tar.gz
+*.csv

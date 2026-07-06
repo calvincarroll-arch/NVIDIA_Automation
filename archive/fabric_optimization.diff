@@ -1,9 +1,0 @@
---- text_configs/fabric_policy_v1.conf	2026-06-22 18:41:53.981761700 -0500
-+++ text_configs/fabric_policy_v2.conf	2026-06-22 18:42:35.692170700 -0500
-@@ -1,4 +1,4 @@
- # Baseline Fabric Policy
--mtu 1500
--buffer-size 1024
-+mtu 9216
-+buffer-size 4096
- priority 1

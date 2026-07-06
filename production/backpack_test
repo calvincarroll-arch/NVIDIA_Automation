@@ -1,0 +1,18 @@
+#!/usr/bin/env python3
+import os
+import subprocess
+
+# 1. Take a snapshot of the current environment
+my_env = os.environ.copy()
+
+# 2. Add a custom "Post-it note" to this specific backpack
+my_env["IRON_LOGIC_ROLE"] = "Architect"
+
+# 3. Tell the helper to run the 'env' command using this specific backpack
+# 'grep' filters the output to only show our new variable
+result = subprocess.run(["env"], env=my_env, capture_output=True, text=True)
+
+# 4. Print the result
+if "IRON_LOGIC_ROLE" in result.stdout:
+    print("Success! The subprocess sees our custom backpack variable.")
+    print("Value found:", [line for line in result.stdout.splitlines() if "IRON_LOGIC_ROLE" in line][0])

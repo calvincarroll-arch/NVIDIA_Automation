@@ -48,4 +48,3 @@ if __name__ == "__main__":
     # Pass the CLI argument directly to your auditor function 
     audit_switch_logs(args.log_file)
 
-    

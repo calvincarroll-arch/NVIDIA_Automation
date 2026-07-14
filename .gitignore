@@ -21,3 +21,11 @@ Thumbs.db
 *.log
 *.tar.gz
 *.csv
+
+# 5. Legacy Infrastructure (Puppet)
+*.pp
+
+# 6. Terraform local data
+.terraform/
+.terraform.lock.hcl
+*.tfstate*

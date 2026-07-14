@@ -1,0 +1,18 @@
+---
+- name: Manage Security Banners
+  hosts: all
+  become: yes
+  tasks:
+    - name: Set banner text based on virtualization status
+      ansible.builtin.copy:
+        dest: /etc/issue
+        content: |
+          {% if ansible_virtualization_type != 'NA' %}
+          WARNING: Iron Logic Virtualized Edge Node. All activity is monitored.
+          {% else %}
+          WARNING: Iron Logic Sovereign Bare-Metal Vault. Air-gapped environment.
+          {% endif %}
+        mode: '0644'
+        owner: root
+
+        

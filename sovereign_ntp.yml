@@ -1,0 +1,23 @@
+---
+- name: Manage Sovereign NTP Service
+  hosts: all
+  become: yes
+  tasks:
+    - name: Ensure base software is present
+      ansible.builtin.apt:
+        name: ntp
+        state: present
+
+    - name: Manage the configuration file
+      ansible.builtin.template:
+        src: ntp.conf.j2
+        dest: /etc/ntp.conf
+        mode: '0644'
+        owner: root
+      notify: Restart NTP service
+
+  handlers:
+    - name: Restart NTP service
+      ansible.builtin.service:
+        name: ntp
+        state: restarted

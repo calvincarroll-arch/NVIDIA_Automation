@@ -1,0 +1,19 @@
+---
+- name: VRAM Zombie Killer Management
+  hosts: all
+  become: yes
+  tasks:
+    - name: Deploy the VRAM killer script
+      ansible.builtin.copy:
+        src: ../production/vram_zombie_killer.py
+        dest: /usr/local/bin/vram_zombie_killer.py
+        mode: '0755'
+        owner: root
+
+    - name: Automate execution every 15 minutes
+      ansible.builtin.cron:
+        name: "run_vram_zombie_killer"
+        minute: "*/15"
+        user: root
+        job: "/usr/bin/python3 /usr/local/bin/vram_zombie_killer.py"
+        state: present

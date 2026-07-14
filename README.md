@@ -18,6 +18,15 @@ Implements an air-gapped ingestion gatekeeper. It enforces strict data provenanc
 An automated audit engine designed to hunt "zombie processes"—applications consuming VRAM with 0% compute utilization.
 * 📉 **Impact:** Enables data-driven cost recovery by identifying and terminating inefficient GPU footprint allocations.
 
+## 🛠 Deployment & Orchestration
+*Our infrastructure is managed as code to ensure repeatability and security across isolated GPU clusters.*
+
+*   **Provisioning (Terraform):** Automated creation of virtualized compute nodes, network interfaces, and storage volumes.
+*   **Configuration & Hardening (Ansible):** 
+    *   **Security:** Enforces system-level banners and access controls.
+    *   **Time Synchronization:** Managed via `chrony` to ensure microsecond accuracy across the cluster.
+    *   **Baseline:** Standardizes environment packages for Sovereign AI operations.
+
 ## 🧠 Technical Discipline
 - 📡 **Observability:** All modules generate persistent, structured audit logs (`logs/`) for headless operational tracking.
 - 📂 **Environment:** Production-hardened structure with strictly isolated deployment logic.

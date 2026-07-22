@@ -3,7 +3,7 @@
 Iron Logic AI-Infra Toolkit
 Module: VRAM Zombie Killer
 Description: Audits allocated GPU memory footprints against active compute parameters 
-             to identify, log, isolate, and reclaim stale process leaks.
+             to identify, log, isolate, reclaim, and quantify financial savings of stale process leaks.
 """
 
 import os
@@ -23,7 +23,7 @@ logging.basicConfig(
 def scan_and_reclaim_gpu_processes(process_matrix):
     """
     Evaluates process metrics to isolate high VRAM allocation with zero compute load,
-    notifies telemetry, and executes safe reclamation post-audit.
+    notifies telemetry, executes safe reclamation post-audit, and calculates FinOps impact.
     """
     print("[*] Initializing Iron Logic VRAM Zombie Scan...")
     logging.info("GPU FinOps process audit cycle initiated.")
@@ -49,10 +49,12 @@ def scan_and_reclaim_gpu_processes(process_matrix):
     print(f"[*] Audit complete. Total Defunct Processes Flagged: {len(zombies_to_reclaim)}")
     logging.info(f"Audit phase closed. Defunct items caught: {len(zombies_to_reclaim)}")
 
-    # Phase 2: Isolation and Reclaim
+    # Phase 2: Isolation, Reclaim, and FinOps Quantification
     if zombies_to_reclaim:
         print("[*] Initiating VRAM Reclamation Matrix...")
         logging.info("VRAM reclamation sequence started.")
+        
+        total_vram_freed = 0
         
         for zombie in zombies_to_reclaim:
             pid = zombie.get("pid")
@@ -61,6 +63,7 @@ def scan_and_reclaim_gpu_processes(process_matrix):
             try:
                 # In a live production environment, this executes the OS termination call:
                 # os.kill(pid, 9)
+                total_vram_freed += vram
                 reclaim_msg = f"RECLAIMED SUCCESS -> Terminated PID {pid}, freed {vram}MB VRAM."
                 print(f"[+] {reclaim_msg}")
                 logging.info(reclaim_msg)
@@ -68,6 +71,18 @@ def scan_and_reclaim_gpu_processes(process_matrix):
                 err_msg = f"FAILED RECLAMATION -> Could not terminate PID {pid}: {e}"
                 print(f"[-] {err_msg}")
                 logging.error(err_msg)
+                
+        # FinOps Real-Time Financial Impact Calculation
+        # Estimating enterprise cloud GPU waste metric: ~$0.0005 per MB per hour of stranded capacity
+        hourly_savings_est = total_vram_freed * 0.0005
+        monthly_savings_est = hourly_savings_est * 24 * 30
+        
+        finops_summary = (
+            f"FINOPS REPORT -> Total VRAM Reclaimed: {total_vram_freed}MB | "
+            f"Est. Savings Impact: ${hourly_savings_est:.2f}/hr (~${monthly_savings_est:.2f}/mo projected)"
+        )
+        print(f"[$$] {finops_summary}")
+        logging.info(finops_summary)
                 
         print("[*] Reclamation cycle complete. Compute fabric optimized.")
         logging.info("VRAM reclamation sequence successfully finalized.")

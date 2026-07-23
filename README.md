@@ -14,9 +14,12 @@ Automates the audit of BGP network daemons and optical switch linkages. Instead 
 Implements an air-gapped ingestion gatekeeper. It enforces strict data provenance by verifying the SHA-256 integrity of all incoming payloads before they are authorized for deployment into the training pipeline.
 * 🛑 **Impact:** Prevents unauthorized or corrupted model weight injection at the entry point.
 
-### 3. 💰 AI FinOps (`production/vram_zombie_killer.py`)
+### 3. 💰 AI FinOps (production/vram_zombie_killer.py)
+
 An automated audit engine designed to hunt "zombie processes"—applications consuming VRAM with 0% compute utilization.
-* 📉 **Impact:** Enables data-driven cost recovery by identifying and terminating inefficient GPU footprint allocations.
+
+*   Impact: Enables data-driven cost recovery by identifying and terminating inefficient GPU footprint allocations.
+*   Cost Recovery Telemetry: Dynamically calculates the exact monetary value of reclaimed VRAM on the fly, generating real-time FinOps metrics that translate recovered GPU compute directly into dollars saved.
 
 ## 🛠 Deployment & Orchestration
 *Our infrastructure is managed as code to ensure repeatability and security across isolated GPU clusters.*

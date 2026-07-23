@@ -14,5 +14,3 @@
           {% endif %}
         mode: '0644'
         owner: root
-
-        

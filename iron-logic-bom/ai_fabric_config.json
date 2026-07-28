@@ -1,0 +1,27 @@
+{
+    "NVIDIA_H100_SXM": {
+        "power_watts": 700, 
+        "ru": 0, 
+        "type": "GPU"
+    },
+    "NVIDIA_HGX_8GPU_CHASSIS": {
+        "power_watts": 2000, 
+        "ru": 8, 
+        "type": "Chassis"
+    },
+    "MELLANOX_SN4600_SWITCH": {
+        "power_watts": 450, 
+        "ru": 2, 
+        "type": "Network"
+    },
+    "OSFP_800G_TRANSCEIVER": {
+        "power_watts": 20, 
+        "ru": 0, 
+        "type": "Optics"
+    },
+    "AMD_MI300X_OAM": {
+        "power_watts": 750, 
+        "ru": 0, 
+        "type": "GPU"
+    }
+}

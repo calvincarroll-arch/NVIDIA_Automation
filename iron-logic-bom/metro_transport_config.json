@@ -1,0 +1,32 @@
+{
+    "CIENA_6500_14SLOT_OTN": {
+        "power_watts": 3200, 
+        "ru": 13, 
+        "power_type": "-48V_DC",
+        "type": "Ultra_Long_Haul_Transport_Core"
+    },
+    "CIENA_6500_2SLOT_PACKET_OPTICAL": {
+        "power_watts": 850, 
+        "ru": 3, 
+        "power_type": "-48V_DC",
+        "type": "Metro_Transport_Compact"
+    },
+    "FUJITSU_1FINITY_T100": {
+        "power_watts": 450, 
+        "ru": 1, 
+        "power_type": "-48V_DC",
+        "type": "Metro_Access"
+    },
+    "CORNING_FIBER_PATCH_PANEL_144": {
+        "power_watts": 0, 
+        "ru": 2, 
+        "power_type": "Passive",
+        "type": "Fiber_Infrastructure"
+    },
+    "ALPHA_TECHNOLOGIES_COMPACT_BDFB": {
+        "power_watts": 0, 
+        "ru": 2, 
+        "power_type": "Passive",
+        "type": "DC_Power_Distribution"
+    }
+}

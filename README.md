@@ -21,6 +21,11 @@ An automated audit engine designed to hunt "zombie processes"—applications con
 *   Impact: Enables data-driven cost recovery by identifying and terminating inefficient GPU footprint allocations.
 *   Cost Recovery Telemetry: Dynamically calculates the exact monetary value of reclaimed VRAM on the fly, generating real-time FinOps metrics that translate recovered GPU compute directly into dollars saved.
 
+### 4. 🔌 **Metro Transport & AI Infrastructure BOM Engineering (`iron-logic-bom/`)**
+An automated transport and hardware tooling suite engineered for Ciena/Fujitsu carrier transport workflows and high-density AI cluster provisioning. It parses shelf/slot/port (`sh/sl/pt`) optical telemetry, validates power attenuation ($\text{dBm}$), and dynamically models hardware bills of materials for localized computing fabrics.
+
+* **Impact:** Eliminates manual spreadsheet errors, prevents optical link attenuation failures, and automates end-to-end component scaling from metro edge nodes to enterprise AI clusters.
+
 ## 🛠 Deployment & Orchestration
 *Our infrastructure is managed as code to ensure repeatability and security across isolated GPU clusters.*
 

@@ -29,3 +29,9 @@ Thumbs.db
 .terraform/
 .terraform.lock.hcl
 *.tfstate*
+.venv/
+
+iron_logic_sandbox.py
+sandbox_output.json.venv/
+__pycache__/
+netbox-docker/

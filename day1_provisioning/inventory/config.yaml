@@ -1,0 +1,12 @@
+---
+inventory:
+  plugin: NetBoxInventory2
+  options:
+    nb_url: "http://localhost:8000"
+    nb_token: "nbt_iMNuDe6runDG.vEHRFZERrRhYGqjUGW747Os6Yq4yhKQ2uPwtHV0e"
+    ssl_verify: false
+
+runner:
+  plugin: threaded
+  options:
+    num_workers: 20

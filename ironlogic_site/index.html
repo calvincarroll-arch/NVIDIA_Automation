@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iron Logic LLC | Sovereign AI Infrastructure</title>
+    <meta name="description" content="Iron Logic LLC architects, validates, and secures high-density fabrics required for private LLMs and air-gapped GPU clusters based in Dallas, Texas.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            black: '#0A0A0A',
+                            text: '#EAEAEA',
+                            accent: '#00B4FF', // Electric Blue
+                        }
+                    },
+                    fontFamily: {
+                        mono: ['"Roboto Mono"', 'monospace'],
+                    },
+                    backgroundImage: {
+                        'grid-pattern': "url(\"data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0V0zm20 20h20v20H20V20zM0 20h20v20H0V20zM20 0h20v20H20V0z' fill='%23111111' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E\")",
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0A0A0A;
+            color: #EAEAEA;
+        }
+        
+        /* Custom scrollbar for terminal feel */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0A0A0A;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #222;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00B4FF;
+        }
+
+        /* Subtle scanline effect overlay */
+        .scanlines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0) 50%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1));
+            background-size: 100% 4px;
+            pointer-events: none;
+            z-index: 50;
+            opacity: 0.3;
+        }
+
+        /* Link hover effect */
+        .nav-link {
+            position: relative;
+            text-decoration: none;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: #00B4FF;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+        .nav-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        /* Cursor blink animation for hero */
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        .cursor-blink {
+            display: inline-block;
+            width: 10px;
+            height: 1.2em;
+            background-color: #00B4FF;
+            vertical-align: middle;
+            animation: blink 1s step-end infinite;
+            margin-left: 4px;
+        }
+        
+        /* Selection color */
+        ::selection {
+            background: rgba(0, 180, 255, 0.3);
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="font-mono antialiased relative min-h-screen flex flex-col selection:bg-brand-accent/30 selection:text-white">
+
+    <div class="fixed inset-0 bg-grid-pattern z-[-1]"></div>
+    <div class="scanlines"></div>
+
+    <header class="fixed top-0 w-full z-40 bg-brand-black/90 backdrop-blur-sm border-b border-gray-800">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center">
+            <div class="flex items-center mb-4 sm:mb-0">
+                <span class="text-brand-text font-bold text-xl tracking-tight">IRON LOGIC<span class="text-brand-accent">_</span></span>
+            </div>
+            <nav class="flex space-x-6 text-sm text-gray-400">
+                <a href="#about" class="nav-link hover:text-brand-text transition-colors duration-200">About</a>
+                <span class="text-gray-700">|</span>
+                <a href="#capabilities" class="nav-link hover:text-brand-text transition-colors duration-200">Capabilities</a>
+                <span class="text-gray-700">|</span>
+                <a href="#contact" class="nav-link hover:text-brand-text transition-colors duration-200">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow flex flex-col justify-center pt-24 pb-12">
+        <section class="w-full flex items-center min-h-[70vh] px-6">
+            <div class="max-w-4xl mx-auto w-full">
+                <div class="mb-4 text-brand-accent text-sm font-semibold tracking-widest uppercase flex items-center">
+                    <span class="w-8 h-[1px] bg-brand-accent mr-3"></span>
+                    System Online
+                </div>
+                <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold text-brand-text leading-tight mb-6 tracking-tighter">
+                    Deterministic Infrastructure<br>
+                    <span class="text-gray-500">for Sovereign AI</span><span class="cursor-blink"></span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed border-l-2 border-gray-800 pl-4">
+                    We architect, validate, and secure the high-density fabrics required for private LLMs and air-gapped GPU clusters. <br>
+                    <span class="text-brand-text mt-2 block">> Location: Dallas, Texas.</span>
+                </p>
+            </div>
+        </section>
+
+        <section id="about" class="w-full py-24 px-6 bg-brand-black/50 border-t border-b border-gray-900">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-2xl md:text-3xl font-bold mb-8 flex items-center">
+                    <span class="text-brand-accent mr-2">01.</span> Mission Directive
+                </h2>
+                <div class="space-y-6 text-gray-300 leading-relaxed md:text-lg">
+                    <p>
+                        The era of renting intelligence is closing. As artificial intelligence evolves from a tool to foundational governing infrastructure, true organizational autonomy requires ownership of the complete AI lifecycle—from raw data storage to inference.
+                    </p>
+                    <p>
+                        Iron Logic LLC exists to solve the hardware and networking complexities of <strong class="text-brand-text font-semibold">Data Sovereignty</strong>. We build the physical fortresses where sensitive data meets high-performance compute. 
+                    </p>
+                    <p>
+                        By engineering entirely private, deeply secure, and often air-gapped compute environments, we ensure that your intellectual property, model weights, and inference data never cross unverified boundaries or become subject to external disruption. Control your fabric; control your future.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="capabilities" class="w-full py-24 px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-2xl md:text-3xl font-bold mb-12 flex items-center">
+                    <span class="text-brand-accent mr-2">02.</span> Core Capabilities
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Capability 1 -->
+                    <div class="p-6 border border-gray-800 rounded-sm bg-gray-950/30 hover:border-brand-accent/50 transition-colors duration-300 group">
+                        <div class="text-brand-accent text-4xl mb-4 font-light opacity-50 group-hover:opacity-100 transition-opacity">01</div>
+                        <h3 class="text-xl font-bold mb-3 text-brand-text">GPU Cluster Architecture</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Design and deployment of multi-region, high-density compute fabrics. Optimized specifically for H100/A100 workloads, ensuring maximum throughput, thermal efficiency, and non-blocking network topologies for distributed training.
+                        </p>
+                    </div>
+
+                    <!-- Capability 2 -->
+                    <div class="p-6 border border-gray-800 rounded-sm bg-gray-950/30 hover:border-brand-accent/50 transition-colors duration-300 group">
+                        <div class="text-brand-accent text-4xl mb-4 font-light opacity-50 group-hover:opacity-100 transition-opacity">02</div>
+                        <h3 class="text-xl font-bold mb-3 text-brand-text">Network Automation</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Implementation of rigorous, code-driven network state. We build CI/CD pipelines utilizing NetBox as the Source of Truth, orchestrated via Python and Nornir to ensure infrastructure deployments are repeatable, deterministic, and error-free.
+                        </p>
+                    </div>
+
+                    <!-- Capability 3 -->
+                    <div class="p-6 border border-gray-800 rounded-sm bg-gray-950/30 hover:border-brand-accent/50 transition-colors duration-300 group">
+                        <div class="text-brand-accent text-4xl mb-4 font-light opacity-50 group-hover:opacity-100 transition-opacity">03</div>
+                        <h3 class="text-xl font-bold mb-3 text-brand-text">Sovereign Compliance</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Engineering strictly air-gapped systems and heavily segmented environments. We validate architecture against rigorous regulatory alignment standards, providing the physical and logical isolation required for national security or highly regulated industries.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="w-full py-24 px-6 bg-brand-black/80 border-t border-gray-900">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-2xl md:text-3xl font-bold mb-6 flex items-center justify-center">
+                    <span class="text-brand-accent mr-2">03.</span> Secure Comm
+                </h2>
+                <div class="p-8 border border-gray-800 bg-black/50 rounded-sm inline-block text-left w-full max-w-2xl">
+                    <p class="text-gray-400 mb-6 font-mono text-sm leading-relaxed">
+                        > Initiating secure channel...<br>
+                        > Status: Ready<br><br>
+                        Inquiries regarding architecture validation trials, infrastructure assessments, and partnership requests should be directed to the Founder and Principal Architect.
+                    </p>
+                    <div class="mt-8 flex items-center p-4 bg-gray-900/50 border border-gray-800">
+                        <span class="text-gray-500 mr-4">To:</span>
+                        <a href="mailto:calvin@ironlogictech.net" class="text-brand-accent hover:text-white transition-colors duration-200 font-semibold text-lg tracking-wide">
+                            calvin@ironlogictech.net
+                        </a>
+                    </div>
+                    <div class="mt-4 text-xs text-gray-600">
+                        GPG key available upon initial contact.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="w-full py-6 text-center text-gray-600 text-xs border-t border-gray-900 mt-auto">
+        <p>&copy; <span id="year"></span> Iron Logic LLC. All rights reserved. | Dallas, TX.</p>
+        <script>
+            document.getElementById('year').textContent = new Date().getFullYear();
+        </script>
+    </footer>
+
+</body>
+</html>

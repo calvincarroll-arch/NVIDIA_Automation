@@ -396,3 +396,25 @@ ISOLATED_DEPLOYMENT = _environ_get_and_map('ISOLATED_DEPLOYMENT', 'False', _AS_B
 
 # Enables or disables the NetBox Copilot agent globally. When enabled, users can opt to toggle the agent individually.
 COPILOT_ENABLED = _environ_get_and_map('COPILOT_ENABLED', 'True', _AS_BOOL)
+
+PLUGINS = [
+    'netbox_topology_views',
+]
+
+PLUGINS_CONFIG = {
+    'netbox_topology_views': {
+        'allow_moving': True,
+        'static_image_directory': 'netbox_topology_views/img',
+    }
+}
+
+PLUGINS = [
+    'netbox_topology_views',
+]
+
+PLUGINS_CONFIG = {
+    'netbox_topology_views': {
+        'allow_moving': True,
+        'static_image_directory': 'netbox_topology_views/img',
+    }
+}

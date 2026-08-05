@@ -3,7 +3,7 @@ inventory:
   plugin: NetBoxInventory2
   options:
     nb_url: "http://localhost:8000"
-    nb_token: "nbt_iMNuDe6runDG.vEHRFZERrRhYGqjUGW747Os6Yq4yhKQ2uPwtHV0e"
+    nb_token: " nbt_893DVr8wXCL7.x1Pj1cpHtezKVLjm5YHU9upXJbdPk4Prxp9t0MPW"
     ssl_verify: false
 
 runner:

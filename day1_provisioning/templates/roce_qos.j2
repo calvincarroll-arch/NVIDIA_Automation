@@ -2,11 +2,11 @@
 ! Global QoS and ECN Thresholds
 qos enable
 congestion-notification profile AI_ECN
- ecn enable
- ecn threshold min-th 150 max-th 350 probability 10
+  ecn enable
+  ecn threshold min-th 150 max-th 350 probability 10
 !
 ! Priority Flow Control (PFC) Map for Lossless Traffic (Dot1p Priority 3)
 qos map pfc-queue 3
 interface port-channel 1-128
- priority-flow-control mode on force
- qos trust dscp
+  priority-flow-control mode on force
+  qos trust dscp

@@ -1,0 +1,9 @@
+! --- NVIDIA/Mellanox BGP Underlay Configuration ---
+{% set site_asns = {'las-ai-01': 65101, 'smr-ai-01': 65102, 'edn-ai-01': 65103, 'hou-ai-01': 65104, 'atl-ai-01': 65105} %}
+{% set site_slug = host.data.site.slug if host.data.site else 'atl-ai-01' %}
+router bgp {{ site_asns.get(site_slug, 65101) }}
+  router-id {{ host.data.primary_ip.address.split('/')[0] if host.data.primary_ip else '10.255.0.1' }}
+  bgp bestpath as-path multipath-relax
+  !
+  address-family ipv4 unicast
+!

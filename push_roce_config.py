@@ -1,34 +1,35 @@
 from nornir import InitNornir
-from nornir.core.task import Task, Result
 from nornir_jinja2.plugins.tasks import template_file
-import os
+from nornir_utils.plugins.functions import print_result
 
-def push_lossless_qos(task: Task) -> Result:
-    # Render the Jinja2 template using host-specific data from NetBox
-    rendered = task.run(
+def push_lossless_qos(task):
+    # Render QoS Template
+    qos_result = task.run(
         task=template_file,
         template="roce_qos.j2",
         path="day1_provisioning/templates"
     )
-    task.host["rendered_config"] = rendered.result
     
-    return Result(host=task.host, result=f"Successfully generated and staged RoCEv2 QoS config for {task.host.name}\n{task.host['rendered_config']}")
+    # Render BGP Underlay Template
+    bgp_result = task.run(
+        task=template_file,
+        template="bgp_underlay.j2",
+        path="day1_provisioning/templates"
+    )
+    
+    return f"Successfully generated QoS and BGP Underlay intent for {task.host.name}\n\n{qos_result.result}\n{bgp_result.result}"
 
 def main():
-    # Initialize Nornir using your NetBox inventory config
     nr = InitNornir(config_file="day1_provisioning/inventory/config.yaml")
     
-    print("--- IRON LOGIC: PUSHING ROCEv2 INTENT CONFIGS ---")
+    print("--- IRON LOGIC: PUSHING MULTI-SITE ROCEv2 & BGP INTENT ---")
     results = nr.run(task=push_lossless_qos)
     
-    # Check if inventory is empty
     if not nr.inventory.hosts:
-        print("[WARNING] No devices found in NetBox inventory. Please add devices to NetBox first.")
+        print("[WARNING] No devices found in NetBox inventory.")
         return
 
-    for host, result in results.items():
-        print(f"\n[SUCCESS] {host}:")
-        print(result[0].result)
+    print_result(results)
 
 if __name__ == "__main__":
     main()

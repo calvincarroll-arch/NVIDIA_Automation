@@ -40,25 +40,49 @@ Parses shelf/slot/port (`sh/sl/pt`) optical telemetry, validates power attenuati
 
 ## 📐 Event-Driven Pipeline Topology
 
-+--------------------------------+
-              | NetBox Source of Truth (SoT)   |
-              +---------------+----------------+
-                              |
-                              | (Webhook POST Trigger)
-                              v
-              +--------------------------------+
-              | Flask Receiver Listener (5000) |
-              +---------------+----------------+
-                              |
-                              v
-              +--------------------------------+
-              | Nornir Automation Controller   |
-              +---------------+----------------+
-                              |
-  +---------------------------+---------------------------+
-  |                           |                           |
-  v                           v                           v
+```text
+                  +--------------------------------+
+                  | NetBox Source of Truth (SoT)   |
+                  +---------------+----------------+
+                                  |
+                                  | (Webhook POST Trigger)
+                                  v
+                  +--------------------------------+
+                  | Flask Receiver Listener (5000) |
+                  +---------------+----------------+
+                                  |
+                                  v
+                  +--------------------------------+
+                  | Nornir Automation Controller   |
+                  +---------------+----------------+
+                                  |
+      +---------------------------+---------------------------+
+      |                           |                           |
+      v                           v                           v
 +---------------+           +---------------+           +---------------+
 | atl-ept-lf-05 |           | hou-spk-lf-04 |           | smr-qb-lf-02  |
 |  (AI Leaf 5)  |           |  (AI Leaf 4)  |           |  (AI Leaf 2)  |
 +---------------+           +---------------+           +---------------+
+```
+
+## 🛠 Deployment & Orchestration
+
+```bash
+# Start the event-driven webhook listener
+python3 webhook_listener.py
+
+# Run continuous compliance audit across the fabric
+python3 audit_compliance.py
+
+# Generate Day 0 ZTP boot manifests for new hardware
+python3 day0_ztp_provisioner.py
+```
+
+* **Provisioning (Terraform):** Automated creation of virtualized compute nodes, network interfaces, and storage volumes.
+* **Configuration & Hardening (Ansible):** Enforces system-level banners, system access controls, and `chrony` time synchronization for microsecond cluster accuracy.
+
+---
+
+## 🧠 Technical Discipline
+- 📡 **Observability:** All modules generate persistent, structured audit logs (`logs/`) for headless operational tracking.
+- 📂 **Environment:** Production-hardened structure with strictly isolated deployment logic.

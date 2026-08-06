@@ -124,6 +124,8 @@
                 <span class="text-gray-700">|</span>
                 <a href="#capabilities" class="nav-link hover:text-brand-text transition-colors duration-200">Capabilities</a>
                 <span class="text-gray-700">|</span>
+                <a href="#architecture" class="nav-link hover:text-brand-text transition-colors duration-200">Topology</a>
+                <span class="text-gray-700">|</span>
                 <a href="#contact" class="nav-link hover:text-brand-text transition-colors duration-200">Contact</a>
             </nav>
         </div>
@@ -140,10 +142,17 @@
                     Deterministic Infrastructure<br>
                     <span class="text-gray-500">for Sovereign AI</span><span class="cursor-blink"></span>
                 </h1>
-                <p class="text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed border-l-2 border-gray-800 pl-4">
-                    We architect, validate, and secure the high-density fabrics required for private LLMs and air-gapped GPU clusters. <br>
+                <p class="text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed border-l-2 border-gray-800 pl-4 mb-8">
+                    We architect, validate, and secure high-density fabrics required for private LLMs and air-gapped GPU clusters. <br>
                     <span class="text-brand-text mt-2 block">> Location: Dallas, Texas.</span>
                 </p>
+                
+                <div class="flex flex-wrap gap-4">
+                    <a href="https://github.com/calvincarroll-arch/NVIDIA_Automation" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 border border-brand-accent text-brand-accent hover:bg-brand-accent hover:text-brand-black transition-all duration-200 font-semibold text-sm rounded-sm group">
+                        <span>[ View Core Infrastructure Code ]</span>
+                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -157,10 +166,10 @@
                         The era of renting intelligence is closing. As artificial intelligence evolves from a tool to foundational governing infrastructure, true organizational autonomy requires ownership of the complete AI lifecycle—from raw data storage to inference.
                     </p>
                     <p>
-                        Iron Logic LLC exists to solve the hardware and networking complexities of <strong class="text-brand-text font-semibold">Data Sovereignty</strong>. We build the physical fortresses where sensitive data meets high-performance compute. 
+                        Iron Logic LLC exists to solve the hardware and networking complexities of <strong class="text-brand-text font-semibold">Data Sovereignty</strong>. We build physical fortresses where sensitive data meets high-performance compute.
                     </p>
                     <p>
-                        By engineering entirely private, deeply secure, and often air-gapped compute environments, we ensure that your intellectual property, model weights, and inference data never cross unverified boundaries or become subject to external disruption. Control your fabric; control your future.
+                        By engineering entirely private, deeply secure, and heavily automated compute environments, we ensure that your intellectual property, model weights, and inference data never cross unverified boundaries or become subject to external disruption. Control your fabric; control your future.
                     </p>
                 </div>
             </div>
@@ -172,41 +181,99 @@
                     <span class="text-brand-accent mr-2">02.</span> Core Capabilities
                 </h2>
                 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     <!-- Capability 1 -->
                     <div class="p-6 border border-gray-800 rounded-sm bg-gray-950/30 hover:border-brand-accent/50 transition-colors duration-300 group">
-                        <div class="text-brand-accent text-4xl mb-4 font-light opacity-50 group-hover:opacity-100 transition-opacity">01</div>
-                        <h3 class="text-xl font-bold mb-3 text-brand-text">GPU Cluster Architecture</h3>
+                        <div class="text-brand-accent text-3xl mb-4 font-light opacity-50 group-hover:opacity-100 transition-opacity">01</div>
+                        <h3 class="text-lg font-bold mb-3 text-brand-text">Event-Driven CI/CD</h3>
                         <p class="text-gray-400 text-sm leading-relaxed">
-                            Design and deployment of multi-region, high-density compute fabrics. Optimized specifically for H100/A100 workloads, ensuring maximum throughput, thermal efficiency, and non-blocking network topologies for distributed training.
+                            Webhooks linked from NetBox to local receivers, triggering Nornir to compile and push lossless RoCEv2 and BGP underlay Jinja2 templates directly to switch fabrics in real time.
                         </p>
                     </div>
 
                     <!-- Capability 2 -->
                     <div class="p-6 border border-gray-800 rounded-sm bg-gray-950/30 hover:border-brand-accent/50 transition-colors duration-300 group">
-                        <div class="text-brand-accent text-4xl mb-4 font-light opacity-50 group-hover:opacity-100 transition-opacity">02</div>
-                        <h3 class="text-xl font-bold mb-3 text-brand-text">Network Automation</h3>
+                        <div class="text-brand-accent text-3xl mb-4 font-light opacity-50 group-hover:opacity-100 transition-opacity">02</div>
+                        <h3 class="text-lg font-bold mb-3 text-brand-text">Compliance Auditing</h3>
                         <p class="text-gray-400 text-sm leading-relaxed">
-                            Implementation of rigorous, code-driven network state. We build CI/CD pipelines utilizing NetBox as the Source of Truth, orchestrated via Python and Nornir to ensure infrastructure deployments are repeatable, deterministic, and error-free.
+                            Continuous pre/post-change validation using DeepDiff to parse live running switch configurations against golden Jinja2 baselines—catching MTU, timer, or ECN drift instantly.
                         </p>
                     </div>
 
                     <!-- Capability 3 -->
                     <div class="p-6 border border-gray-800 rounded-sm bg-gray-950/30 hover:border-brand-accent/50 transition-colors duration-300 group">
-                        <div class="text-brand-accent text-4xl mb-4 font-light opacity-50 group-hover:opacity-100 transition-opacity">03</div>
-                        <h3 class="text-xl font-bold mb-3 text-brand-text">Sovereign Compliance</h3>
+                        <div class="text-brand-accent text-3xl mb-4 font-light opacity-50 group-hover:opacity-100 transition-opacity">03</div>
+                        <h3 class="text-lg font-bold mb-3 text-brand-text">Day 0 ZTP Provisioning</h3>
                         <p class="text-gray-400 text-sm leading-relaxed">
-                            Engineering strictly air-gapped systems and heavily segmented environments. We validate architecture against rigorous regulatory alignment standards, providing the physical and logical isolation required for national security or highly regulated industries.
+                            Automated bare-metal rack onboarding for leaf switches. Dynamically queries hardware serials/MACs to generate executable Cumulus Linux ZTP bootstrap manifests on boot.
+                        </p>
+                    </div>
+
+                    <!-- Capability 4 -->
+                    <div class="p-6 border border-gray-800 rounded-sm bg-gray-950/30 hover:border-brand-accent/50 transition-colors duration-300 group">
+                        <div class="text-brand-accent text-3xl mb-4 font-light opacity-50 group-hover:opacity-100 transition-opacity">04</div>
+                        <h3 class="text-lg font-bold mb-3 text-brand-text">FinOps & Security</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Air-gapped data ingestion gatekeepers verifying SHA-256 weight integrity alongside automated FinOps engines hunting VRAM zombie processes to recover compute costs.
                         </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="w-full py-24 px-6 bg-brand-black/80 border-t border-gray-900">
+        <section id="architecture" class="w-full py-24 px-6 bg-brand-black/50 border-t border-b border-gray-900">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4 flex items-center">
+                    <span class="text-brand-accent mr-2">03.</span> Event-Driven Pipeline Topology
+                </h2>
+                <p class="text-gray-400 text-sm mb-8">
+                    Automated control plane linking Source-of-Truth intent directly to lossless AI leaf execution.
+                </p>
+
+                <!-- Terminal Box -->
+                <div class="border border-gray-800 rounded-sm bg-black overflow-hidden shadow-2xl">
+                    <div class="bg-gray-900/80 px-4 py-2 border-b border-gray-800 flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+                            <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
+                            <span class="w-3 h-3 rounded-full bg-green-500/80 inline-block"></span>
+                        </div>
+                        <span class="text-xs text-gray-500 font-mono">pipeline_topology.asc</span>
+                    </div>
+                    <div class="p-6 overflow-x-auto text-brand-accent font-mono text-xs sm:text-sm leading-tight">
+<pre>
+                  +--------------------------------+
+                  | NetBox Source of Truth (SoT)   |
+                  +---------------+----------------+
+                                  |
+                                  | (Webhook POST Trigger)
+                                  v
+                  +--------------------------------+
+                  | Flask Receiver Listener (5000) |
+                  +---------------+----------------+
+                                  |
+                                  v
+                  +--------------------------------+
+                  | Nornir Automation Controller   |
+                  +---------------+----------------+
+                                  |
+      +---------------------------+---------------------------+
+      |                           |                           |
+      v                           v                           v
++---------------+           +---------------+           +---------------+
+| atl-ept-lf-05 |           | hou-spk-lf-04 |           | smr-qb-lf-02  |
+|  (AI Leaf 5)  |           |  (AI Leaf 4)  |           |  (AI Leaf 2)  |
++---------------+           +---------------+           +---------------+
+</pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="w-full py-24 px-6 bg-brand-black/80">
             <div class="max-w-3xl mx-auto text-center">
                 <h2 class="text-2xl md:text-3xl font-bold mb-6 flex items-center justify-center">
-                    <span class="text-brand-accent mr-2">03.</span> Secure Comm
+                    <span class="text-brand-accent mr-2">04.</span> Secure Comm
                 </h2>
                 <div class="p-8 border border-gray-800 bg-black/50 rounded-sm inline-block text-left w-full max-w-2xl">
                     <p class="text-gray-400 mb-6 font-mono text-sm leading-relaxed">
